@@ -1,0 +1,80 @@
+% Solutionary of Programming Evaluations
+% Version 1.0, released May 11th. 2018
+%
+% Author: Jorge Fatama Vera
+% Organization: Sociedad de Apoyo para Informáticos (SAI, Society of Support for Informatic Engineers)
+% Pontificia Universidad Católica del Perú, Lima, Peru.
+% Contact:
+% (*) E-mail: jfatamav@e-quipu.pe, jorge.fatama@pucp.edu.pe
+% (*) Phone: (+51) 969950140
+%
+% Licensed by Creative Commmons (CC BY-NC 4.0):
+%  (https://creativecommons.org/licenses/by-nc/4.0/)
+
+% DOCUMENT CLASS
+% You can change the document characteristics (type, font size, etc), but remember this template was made for articles. [A]
+\documentclass[twoside,12pt]{article}
+\usepackage{programsol}
+
+% START OF THE DOCUMENT 
+\begin{document}                     % Your content begins here.
+
+\AddToShipoutPicture{\BackgroundPic} % Adding the watermark
+% The first page doesn't have header and footer
+\thispagestyle{empty}
+\begin{center}
+\begin{large}
+    \textsc{\university\\}
+    \textsc{\organization\\[0.75cm]}
+    \textsc{\course\\}
+    \textsc{\evalCourse\space- \currentCycle\\}
+    \textsc{Proposed Solution\\}
+\end{large}
+\end{center}
+
+\section*{Question 1}
+
+\input{statements/q1}
+
+\subsection*{Solution}
+{\small
+\lstinputlisting[label=cod:p1]{q1.c}
+}
+
+\subsection*{Proof}
+\begin{center}
+    \includegraphics[width=0.6\paperwidth]{scrQ1}
+\end{center}
+
+\section*{Question 2}
+\input{statements/q2}
+
+\subsection*{Solution}
+{\small
+\lstinputlisting[label=cod:p2]{q2.c}
+}
+
+\subsection*{Proof}
+\begin{center}
+    \includegraphics[width=0.6\paperwidth]{scrQ2}
+\end{center}
+
+\begin{flushright}
+    \footnotesize{Format based on Template \textit{Solutionary of Programming Evaluations}, by Jorge Fatama Vera (SAI PUCP)}\\
+\end{flushright}
+
+\end{document}                      % Your content finishes here.
+% END OF THE DOCUMENT
+
+% References:
+%
+% in main.tex
+% [A] List of available document classes: https://tex.stackexchange.com/questions/782/what-are-the-available-documentclass-types-and-their-uses
+%
+% in programsol.sty
+% [1] babel Documentation: http://ctan.uniminuto.edu/macros/latex/required/babel/base/babel.pdf (in page 18, you can see the list of available languages in babel).
+% [2] inputenc Documentation: http://ctan.uniminuto.edu/macros/latex/base/inputenc.pdf
+% Watermark guide: https://tex.stackexchange.com/questions/256750/transparent-textbox-behind-text-on-title-page
+% [3] Headers & Footers Guide: https://en.wikibooks.org/wiki/LaTeX/Customizing_Page_Headers_and_Footers
+% [4] eso-pic Documentation: http://ctan.uniminuto.edu/macros/latex/contrib/eso-pic/eso-pic.pdf
+% [5] Listing Format Guide: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings

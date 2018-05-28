@@ -1,0 +1,111 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{programsol}
+
+% CHARACTER FORMAT
+% This template was made for solutionaries in Latinoamerican spanish, but you can choose your language and character encoding system (utf8, cp437, etc). [1][2]
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% GRAPHICS CONFIGURATION
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% CUSTOMED COMMANDS
+\newcommand{\organization}{Organization}
+\newcommand{\university}{University}
+\newcommand{\fb}{Facebook: Facebook page of the Organization}
+\newcommand{\course}{Course}
+\newcommand{\evalCourse}{Course Evaluation}
+\newcommand{\currentCycle}{Current Cycle}
+% You can add questioners (professors or evaluators), it depends of the number of professor of the course, for example. Please, follow the sequence (D,E,F...)
+\newcommand{\questionerA}{Professor 1}
+\newcommand{\questionerB}{Professor 2}
+%\newcommand{\questionerC}{Professor 3
+% You can add answerers (collaborators). Please, follow the sequence (D,E,F...)
+\newcommand{\answererA}{Collaborator 1}
+\newcommand{\answererB}{Collaborator 2}
+%\newcommand{\answererC}{Collaborator 3}
+%\newcommand{\answererD}{Collaborator 4}
+%\newcommand{\answererE}{Collaborator 5}
+%The documenter is the person who wrote the modifications of this template and added the other archives (images, programs, statements). If an answerer or questioner did that tasks, you should comment the next line. 
+\newcommand{\documenter}{Documenter (in LaTeX)}
+\newcommand{\emailA}{\texttt{Collaborator 1's e-mail}}
+\newcommand{\emailB}{\texttt{Collaborator 2's e-mail}}
+%\newcommand{\emailC}{\texttt{Collaborator 3's e-mail}}
+%\newcommand{\emailD}{\texttt{Collaborator 4's e-mail}}
+%\newcommand{\emailE}{\texttt{Collaborator 5's e-mail}}
+\newcommand{\logoTeX}{\LaTeX\space}
+\newcommand{\listingName}{Listing Name}
+
+% SPACING: Default is 1.0
+\usepackage{setspace}
+\spacing{1.2}
+
+% CUSTOMING OF MARGINS
+\usepackage{anysize}
+\papersize{29.7cm}{21cm}
+\marginsize{2cm}{2cm}{2cm}{2cm}
+
+% HEADERS & FOOTERS [3]
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy} 
+% Header
+\lhead[\organization]{\thepage/\pageref{LastPage}}
+%\chead[]{}
+\rhead[\thepage/\pageref{LastPage}]{\course\space- \evalCourse}
+\renewcommand{\headrulewidth}{0.5pt}
+% Footer
+\lfoot[\evalCourse\space- \currentCycle]{}
+\cfoot[]{}
+\rfoot[]{\fb}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% WATERMARK [4]
+% You can put your own logo deleting our logo, uploading yours and name it "logo"
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=0.75\paperwidth,
+keepaspectratio]{logo}%
+\vfill
+}}}
+
+% CUSTOMED OF LISTINGS (CODE)
+\usepackage{color}
+\definecolor{colorKeywords}{rgb}{0.13,0.13,1}   % Blue
+\definecolor{colorComments}{rgb}{0,0.5,0}       % Green
+\definecolor{colorStrings}{rgb}{0.9,0,0}        % Red
+\usepackage{listings}
+\usepackage{caption}
+
+% Customing of languague [5]
+\renewcommand{\lstlistingname}{\listingName}
+\usepackage{listingsutf8}
+\lstset{language=C,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,           
+  showstringspaces=false,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{colorComments},
+  keywordstyle=\color{colorKeywords}\bfseries,
+  stringstyle=\color{colorStrings},
+  basicstyle=\ttfamily,
+  numberstyle=\ttfamily,
+  %numbers=left,
+  stepnumber=1,
+  numbersep=8pt,
+  tabsize=2,
+  prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+  aboveskip={0.5\baselineskip},
+  extendedchars=true,
+  %frame=shadowbox,
+  inputencoding=utf8/latin1, % You can choose your own character encoding system
+  inputpath=programs/
+}
